@@ -1,0 +1,58 @@
+ model_config: 
+  model_name: muscall
+  projection_dim: 512             # dimensionality of the multimodal projection layer
+  temperature: null
+  audio: 
+    model: ModifiedResNet         # name of the audio backbone model (ModifiedResNet supported)
+    pooling: attention            # pooling mechanism to obtain fixed-size audio features. One of [average, attention]
+    audio_len_seconds: 20       #30   # max lenght in seconds
+    hidden_size: 256              # 
+    conv_out_channels: 16         # number of output channels in the resnet conv layers
+    n_mels: 128                   # number of mel filterbanks to use in melspectrogram
+    sample_rate: 16000            # sample rate of the input audio
+    n_fft: 1024                   # size of the FFT
+    f_min: 0                      # min frequency in the spectrogram
+    f_max: 11025                  # max frequency in the spectrogram
+    ssl:
+      do_ssl: False             # whether to add audio self-supervised learning during pre-training
+      ssl_loss_weight: 0.3
+      ssl_temperature: 0.5
+      ssl_projection_dim: 256
+      p_polarity: 0.8
+      p_noise: 0.3
+      p_gain: 0.2
+      p_pitch_shift: 0.4
+      p_filter: 0.2
+      p_reverb: 0.2
+  text: 
+    model: Roberta       # name of the textual head model. One of TextTransformer, CLIPTextModel
+    pretrained: roberta-base # name of the pretrained textual head model #if Roberta, pretrained: roberta-base
+    frozen_layers: null         # range of layers to freeze during pretraining
+    num_hidden_layers: 12          # number of hidden layers in the transformer
+    hidden_size: 768              # dimensionality of the transformer layers
+    num_attention_heads: 12        # number of attention heads in the transformer
+    vocab_size: 50265              #
+    max_position_embeddings: 512   # max number of tokens (seq is truncated if longer)
+    attention_dropout: 0.2        # dropout probability for the attention weights
+    dropout: 0.2                  # dropout probaility in the feedforward blocks
+  loss: clip                      # one of [clip, weighted_clip]
+
+#if roberta = frozen_layers: 4, 
+
+vocab_size = 50265
+hidden_size = 768
+num_hidden_layers = 12
+num_attention_heads = 12
+intermediate_size = 3072
+hidden_act = 'gelu'
+hidden_dropout_prob = 0.1
+attention_probs_dropout_prob = 0.1
+max_position_embeddings = 512
+type_vocab_size = 2
+initializer_range = 0.02
+layer_norm_eps = 1e-12
+pad_token_id = 1bos_token_id = 0
+eos_token_id = 2
+position_embedding_type = 'absolute'
+use_cache = True
+classifier_dropout = None**kwargs )

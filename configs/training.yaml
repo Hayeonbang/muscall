@@ -25,7 +25,7 @@ training:
   # Early stopping configs
   early_stop:
     # Whether to use early stopping, (Default: false)
-    enabled: false
+    enabled: True
     # Patience for early stoppings
     patience: 4000
     # Criteria to be monitored for early stopping

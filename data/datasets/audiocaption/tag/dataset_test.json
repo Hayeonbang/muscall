@@ -1,0 +1,467 @@
+[
+    {
+        "audio_id": 739,
+        "caption": "bright, classical, cute, happy, new-age, playful, pop-piano cover, upbeat/energetic",
+        "audio_path": "-AT0-bX0jpg.npy"
+    },
+    {
+        "audio_id": 740,
+        "caption": "bright, cute, happy, jazz, laid-back, playful, ragtime, romantic, swing",
+        "audio_path": "2c-GPHUbkSY.npy"
+    },
+    {
+        "audio_id": 741,
+        "caption": "background-music, beautiful, dreamy, easy, emotional, laid-back, new-age, relaxing/calm, romantic, soft",
+        "audio_path": "2cwOrV6H840.npy"
+    },
+    {
+        "audio_id": 742,
+        "caption": "background-music, beautiful, bright, dreamy, easy, emotional, new-age, pop-piano cover, relaxing/calm",
+        "audio_path": "52CE5CvBbpo.npy"
+    },
+    {
+        "audio_id": 743,
+        "caption": "background-music, beautiful, dreamy, easy, emotional, laid-back, mysterious, new-age, relaxing/calm, soft",
+        "audio_path": "7bgGUTe7KG0.npy"
+    },
+    {
+        "audio_id": 744,
+        "caption": "beautiful, classical, dark, difficult, emotional, intense/grand, mysterious, new-age, passionate, pop-piano cover, romantic, sad, speedy",
+        "audio_path": "8ljSPfciC08.npy"
+    },
+    {
+        "audio_id": 745,
+        "caption": "background-music, ballad, beautiful, bright, emotional, new-age, relaxing/calm, soft",
+        "audio_path": "BJjEO5uedTA_part_20.npy"
+    },
+    {
+        "audio_id": 746,
+        "caption": "bright, cute, happy, jazz, latin, playful, pop-piano cover, soft",
+        "audio_path": "O9CKHN1AuSk.npy"
+    },
+    {
+        "audio_id": 747,
+        "caption": "bright, cute, happy, jazz, playful, ragtime, upbeat/energetic",
+        "audio_path": "PTDNoHbSX4M.npy"
+    },
+    {
+        "audio_id": 748,
+        "caption": "beautiful, emotional, epic, intense/grand, laid-back, new-age, pop-piano cover, romantic",
+        "audio_path": "WaI5N_PNucY.npy"
+    },
+    {
+        "audio_id": 749,
+        "caption": "emotional, epic, passionate, pop-piano cover, pop-rock, powerful, speedy, upbeat/energetic",
+        "audio_path": "b7PUF395JUA.npy"
+    },
+    {
+        "audio_id": 750,
+        "caption": "background-music, dark, dreamy, emotional, laid-back, new-age, relaxing/calm, sad, scary, soft, tense",
+        "audio_path": "bEdcZDm4uB0.npy"
+    },
+    {
+        "audio_id": 751,
+        "caption": "beautiful, difficult, emotional, epic, new-age, pop-piano cover, powerful, relaxing/calm, upbeat/energetic",
+        "audio_path": "k4pi3A3eHys.npy"
+    },
+    {
+        "audio_id": 752,
+        "caption": "beautiful, difficult, dreamy, emotional, jazz, playful, speedy",
+        "audio_path": "kAD85Nfl5Jw.npy"
+    },
+    {
+        "audio_id": 753,
+        "caption": "bright, cute, easy, happy, jazz, playful, swing, upbeat/energetic",
+        "audio_path": "oXoQYwQw3-E.npy"
+    },
+    {
+        "audio_id": 754,
+        "caption": "bright, classical, playful, ragtime, speedy, upbeat/energetic",
+        "audio_path": "tdBPtSiyJUw.npy"
+    },
+    {
+        "audio_id": 755,
+        "caption": "background-music, ballad, beautiful, dreamy, emotional, laid-back, new-age, relaxing/calm, romantic, soft",
+        "audio_path": "uodfyFby6JM.npy"
+    },
+    {
+        "audio_id": 756,
+        "caption": "dark, epic, mysterious, passionate, powerful, tense",
+        "audio_path": "-2MJVsqAnLM.npy"
+    },
+    {
+        "audio_id": 757,
+        "caption": "bright, emotional, intense/grand, pop-piano cover",
+        "audio_path": "-fYeNQi1UsY.npy"
+    },
+    {
+        "audio_id": 758,
+        "caption": "dreamy, easy, emotional, laid-back, pop-piano cover, sad, soft",
+        "audio_path": "7hNU-YdALXw.npy"
+    },
+    {
+        "audio_id": 759,
+        "caption": "bright, classical, epic, intense/grand, passionate, pop-piano cover, powerful, romantic",
+        "audio_path": "AW8MlO1RdZc.npy"
+    },
+    {
+        "audio_id": 760,
+        "caption": "bright, dark, emotional, epic, passionate, pop-piano cover, pop-rock, tense, upbeat/energetic",
+        "audio_path": "DyQmAxcH1Jo.npy"
+    },
+    {
+        "audio_id": 761,
+        "caption": "background-music, dark, dreamy, easy, emotional, epic, pop-piano cover, relaxing/calm, soft, tense",
+        "audio_path": "EyP5Z5NfWz0.npy"
+    },
+    {
+        "audio_id": 762,
+        "caption": "dark, difficult, epic, intense/grand, mysterious, passionate, powerful, speedy, tense, upbeat/energetic",
+        "audio_path": "IZCEqsUcpZ0.npy"
+    },
+    {
+        "audio_id": 763,
+        "caption": "background-music, dreamy, emotional, jazz, laid-back, romantic, soft, swing",
+        "audio_path": "Jy8wwyaJoS4.npy"
+    },
+    {
+        "audio_id": 764,
+        "caption": "classical, dark, difficult, intense/grand, passionate, powerful, scary, speedy, tense",
+        "audio_path": "LR98AEAgnYQ.npy"
+    },
+    {
+        "audio_id": 765,
+        "caption": "dark, dreamy, emotional, mysterious, new-age, passionate, sad, speedy, tense",
+        "audio_path": "VG4HvhzKhwE.npy"
+    },
+    {
+        "audio_id": 766,
+        "caption": "blues, bright, difficult, emotional, jazz, laid-back, romantic, soft",
+        "audio_path": "VlF9IVV12QE.npy"
+    },
+    {
+        "audio_id": 767,
+        "caption": "background-music, beautiful, dreamy, easy, emotional, laid-back, mysterious, new-age, relaxing/calm, romantic, soft",
+        "audio_path": "VuuWu2m_part_4.npy"
+    },
+    {
+        "audio_id": 768,
+        "caption": "background-music, dark, easy, emotional, laid-back, mysterious, pop-piano cover, sad, scary, soft, tense",
+        "audio_path": "WQgdyBbGsAg.npy"
+    },
+    {
+        "audio_id": 769,
+        "caption": "bright, cute, happy, jazz, passionate, playful, ragtime, speedy, upbeat/energetic",
+        "audio_path": "YLnFl3fzLt0.npy"
+    },
+    {
+        "audio_id": 770,
+        "caption": "difficult, emotional, intense/grand, new-age, passionate, pop-piano cover, powerful, speedy, tense",
+        "audio_path": "Yc-CUhS7-Yk.npy"
+    },
+    {
+        "audio_id": 771,
+        "caption": "background-music, beautiful, dark, dreamy, emotional, laid-back, mysterious, new-age, relaxing/calm, romantic, sad, soft",
+        "audio_path": "ZmCZV3yn1A0.npy"
+    },
+    {
+        "audio_id": 772,
+        "caption": "dark, dreamy, emotional, mysterious, romantic",
+        "audio_path": "drRzC-_BClg.npy"
+    },
+    {
+        "audio_id": 773,
+        "caption": "dark, easy, laid-back, mysterious, soft",
+        "audio_path": "hoQtG4yZwu4.npy"
+    },
+    {
+        "audio_id": 774,
+        "caption": "beautiful, bright, pop-piano cover, speedy, upbeat/energetic",
+        "audio_path": "m88DXcqg0P4.npy"
+    },
+    {
+        "audio_id": 775,
+        "caption": "background-music, bright, dreamy, emotional, jazz, laid-back, latin, relaxing/calm, romantic, soft",
+        "audio_path": "xezvJ1NUekU.npy"
+    },
+    {
+        "audio_id": 776,
+        "caption": "background-music, ballad, beautiful, bright, dreamy, emotional, happy, jazz, laid-back, relaxing/calm, romantic, soft, tense",
+        "audio_path": "yGhMklgBe5g.npy"
+    },
+    {
+        "audio_id": 777,
+        "caption": "background-music, ballad, beautiful, easy, emotional, laid-back, new-age, relaxing/calm, romantic, sad, soft",
+        "audio_path": "-yc20F0Hg0A.npy"
+    },
+    {
+        "audio_id": 778,
+        "caption": "dark, emotional, epic, mysterious, passionate, pop-piano cover, relaxing/calm, sad",
+        "audio_path": "1mNMe28rNuc.npy"
+    },
+    {
+        "audio_id": 779,
+        "caption": "classical, difficult, emotional, epic, intense/grand, new-age, passionate, pop-piano cover, powerful, romantic, speedy, upbeat/energetic",
+        "audio_path": "5u5oCjrIu60.npy"
+    },
+    {
+        "audio_id": 780,
+        "caption": "beautiful, difficult, dreamy, emotional, intense/grand, jazz, mysterious, pop-piano cover, romantic",
+        "audio_path": "5yZN9XGsPxU.npy"
+    },
+    {
+        "audio_id": 781,
+        "caption": "background-music, ballad, bright, easy, emotional, laid-back, pop-piano cover, relaxing/calm, soft",
+        "audio_path": "897DYVnZVBM.npy"
+    },
+    {
+        "audio_id": 782,
+        "caption": "beautiful, easy, emotional, laid-back, new-age, pop-piano cover, relaxing/calm, romantic, sad, soft",
+        "audio_path": "GtSBRsZ_part_9.npy"
+    },
+    {
+        "audio_id": 783,
+        "caption": "beautiful, dark, difficult, emotional, happy, laid-back, passionate, pop-piano cover, pop-rock, relaxing/calm",
+        "audio_path": "LSwXh1Y5thY.npy"
+    },
+    {
+        "audio_id": 784,
+        "caption": "background-music, ballad, classical, dark, difficult, emotional, epic, intense/grand, passionate",
+        "audio_path": "O4BM2Ir_part_1.npy"
+    },
+    {
+        "audio_id": 785,
+        "caption": "bright, cute, easy, jazz, laid-back, relaxing/calm, swing",
+        "audio_path": "PJwTPpV5-7Y.npy"
+    },
+    {
+        "audio_id": 786,
+        "caption": "ballad, dark, dreamy, easy, emotional, laid-back, mysterious, pop-piano cover, relaxing/calm, romantic, sad, soft",
+        "audio_path": "RdSVjPGccAs.npy"
+    },
+    {
+        "audio_id": 787,
+        "caption": "bright, difficult, dreamy, intense/grand, jazz, mysterious, passionate, playful, pop-piano cover, speedy, swing, upbeat/energetic",
+        "audio_path": "SYQPdr91WJw.npy"
+    },
+    {
+        "audio_id": 788,
+        "caption": "dark, difficult, intense/grand, jazz, mysterious, passionate, powerful, ragtime, speedy, swing, upbeat/energetic",
+        "audio_path": "_KSiju8N8JM.npy"
+    },
+    {
+        "audio_id": 789,
+        "caption": "background-music, ballad, beautiful, classical, dark, dreamy, emotional, epic, jazz, mysterious, relaxing/calm, romantic, sad",
+        "audio_path": "dJUhnwrXXFo.npy"
+    },
+    {
+        "audio_id": 790,
+        "caption": "ballad, beautiful, dreamy, emotional, jazz, mysterious, relaxing/calm, romantic, tense",
+        "audio_path": "itvkxSffHn0.npy"
+    },
+    {
+        "audio_id": 791,
+        "caption": "classical, dark, difficult, passionate, playful, speedy, tense, upbeat/energetic",
+        "audio_path": "kt_ELiL-GIQ.npy"
+    },
+    {
+        "audio_id": 792,
+        "caption": "bright, difficult, funk, happy, jazz, passionate, playful, ragtime, speedy, swing, upbeat/energetic",
+        "audio_path": "rVpEudtYyzs.npy"
+    },
+    {
+        "audio_id": 793,
+        "caption": "epic, intense/grand, passionate, pop-piano cover, pop-rock, powerful, tense, upbeat/energetic",
+        "audio_path": "vO0mJ8Qk9hk.npy"
+    },
+    {
+        "audio_id": 794,
+        "caption": "bright, cute, epic, funk, happy, intense/grand, passionate, playful, pop-piano cover, pop-rock, powerful, upbeat/energetic",
+        "audio_path": "2AnzvfQJuxg.npy"
+    },
+    {
+        "audio_id": 795,
+        "caption": "background-music, bright, dreamy, emotional, epic, intense/grand, new-age, passionate, playful, speedy, upbeat/energetic",
+        "audio_path": "3pKS_peEJoQ.npy"
+    },
+    {
+        "audio_id": 796,
+        "caption": "beautiful, bright, classical, cute, happy, relaxing/calm, speedy, upbeat/energetic",
+        "audio_path": "4-YBcvavYSs.npy"
+    },
+    {
+        "audio_id": 797,
+        "caption": "classical, dark, epic, intense/grand, mysterious, passionate, playful, pop-piano cover, powerful, tense",
+        "audio_path": "6tsNJZCdmKM.npy"
+    },
+    {
+        "audio_id": 798,
+        "caption": "beautiful, blues, bright, cute, epic, happy, jazz, laid-back, pop-piano cover, relaxing/calm, soft, swing",
+        "audio_path": "74G8z25tXvc.npy"
+    },
+    {
+        "audio_id": 799,
+        "caption": "background-music, cute, difficult, funk, intense/grand, jazz, latin, passionate, playful, romantic, speedy, tense, upbeat/energetic",
+        "audio_path": "B-ACF_0vzJ4.npy"
+    },
+    {
+        "audio_id": 800,
+        "caption": "background-music, beautiful, dreamy, emotional, happy, new-age, playful, relaxing/calm, soft",
+        "audio_path": "BXJyyMzL-6U.npy"
+    },
+    {
+        "audio_id": 801,
+        "caption": "background-music, ballad, beautiful, dreamy, emotional, happy, laid-back, new-age, passionate, pop-piano cover, relaxing/calm, soft",
+        "audio_path": "CHDfexhkP9Q.npy"
+    },
+    {
+        "audio_id": 802,
+        "caption": "bright, cute, easy, happy, jazz, latin, relaxing/calm, upbeat/energetic",
+        "audio_path": "DvA_wDOVD10.npy"
+    },
+    {
+        "audio_id": 803,
+        "caption": "background-music, beautiful, bright, cute, easy, happy, new-age, soft",
+        "audio_path": "E-SSgrBbR9M.npy"
+    },
+    {
+        "audio_id": 804,
+        "caption": "blues, dark, difficult, intense/grand, jazz, passionate, relaxing/calm, swing, upbeat/energetic",
+        "audio_path": "Ga4J5IpldAs.npy"
+    },
+    {
+        "audio_id": 805,
+        "caption": "background-music, easy, emotional, laid-back, new-age, relaxing/calm, sad, soft",
+        "audio_path": "L4JTnmVPNao.npy"
+    },
+    {
+        "audio_id": 806,
+        "caption": "bright, emotional, intense/grand, jazz, playful, relaxing/calm, romantic, sad, swing",
+        "audio_path": "PaAmXVoTWK4.npy"
+    },
+    {
+        "audio_id": 807,
+        "caption": "beautiful, easy, emotional, laid-back, new-age, relaxing/calm, sad, soft",
+        "audio_path": "UjZaRUkRqX4.npy"
+    },
+    {
+        "audio_id": 808,
+        "caption": "background-music, bright, difficult, dreamy, funk, happy, jazz, playful, relaxing/calm",
+        "audio_path": "Uqao2YizZOQ.npy"
+    },
+    {
+        "audio_id": 809,
+        "caption": "background-music, dark, dreamy, emotional, laid-back, mysterious, new-age, relaxing/calm, sad, scary, tense",
+        "audio_path": "WPe5ojLWKww.npy"
+    },
+    {
+        "audio_id": 810,
+        "caption": "background-music, bright, dark, difficult, emotional, intense/grand, jazz, passionate, playful, pop-piano cover, speedy, upbeat/energetic",
+        "audio_path": "XtV75VQ153k.npy"
+    },
+    {
+        "audio_id": 811,
+        "caption": "bright, cute, dark, emotional, happy, intense/grand, jazz, laid-back, latin, romantic, sad, upbeat/energetic",
+        "audio_path": "ZJj6u8Ts8ps.npy"
+    },
+    {
+        "audio_id": 812,
+        "caption": "beautiful, bright, epic, happy, jazz, new-age, passionate, playful, pop-piano cover, powerful, upbeat/energetic",
+        "audio_path": "eQ80hEW1_E4.npy"
+    },
+    {
+        "audio_id": 813,
+        "caption": "bright, cute, epic, happy, new-age, playful, pop-piano cover, pop-rock, speedy, upbeat/energetic",
+        "audio_path": "nUAS6FZwbYc.npy"
+    },
+    {
+        "audio_id": 814,
+        "caption": "beautiful, emotional, happy, laid-back, new-age, relaxing/calm, romantic, soft",
+        "audio_path": "z_xR3i3G2v4.npy"
+    },
+    {
+        "audio_id": 815,
+        "caption": "background-music, classical, dark, dreamy, emotional, laid-back, mysterious, scary, soft, tense",
+        "audio_path": "A5Bmati05XI.npy"
+    },
+    {
+        "audio_id": 816,
+        "caption": "background-music, beautiful, classical, dark, difficult, dreamy, easy, emotional, epic, laid-back, mysterious, new-age, relaxing/calm, scary, tense",
+        "audio_path": "JV37Hzh02UY.npy"
+    },
+    {
+        "audio_id": 817,
+        "caption": "ballad, beautiful, bright, classical, difficult, dreamy, emotional, epic, happy, intense/grand, new-age, passionate, pop-piano cover, powerful, romantic, sad, speedy, tense, upbeat/energetic",
+        "audio_path": "MakW-iCu7Gw.npy"
+    },
+    {
+        "audio_id": 818,
+        "caption": "beautiful, bright, cute, emotional, happy, jazz, passionate, playful, ragtime, romantic, speedy, swing, upbeat/energetic",
+        "audio_path": "Px11qUsT0mE.npy"
+    },
+    {
+        "audio_id": 819,
+        "caption": "background-music, ballad, beautiful, bright, dreamy, easy, emotional, laid-back, mysterious, new-age, pop-piano cover, relaxing/calm, romantic, sad, soft",
+        "audio_path": "SP4aqSBEcMo.npy"
+    },
+    {
+        "audio_id": 820,
+        "caption": "background-music, beautiful, bright, emotional, epic, happy, mysterious, new-age, passionate, pop-piano cover, pop-rock, romantic, soft, tense",
+        "audio_path": "UfzqqUnAu8I.npy"
+    },
+    {
+        "audio_id": 821,
+        "caption": "background-music, beautiful, bright, emotional, happy, jazz, pop-piano cover, relaxing/calm, romantic, speedy, swing",
+        "audio_path": "a1kg5jyc7n8.npy"
+    },
+    {
+        "audio_id": 822,
+        "caption": "ballad, beautiful, bright, emotional, happy, intense/grand, jazz, mysterious, passionate, pop-piano cover, romantic",
+        "audio_path": "csTSuEV5PFY.npy"
+    },
+    {
+        "audio_id": 823,
+        "caption": "beautiful, blues, bright, cute, difficult, emotional, epic, funk, intense/grand, jazz, passionate, playful, ragtime, romantic, speedy, tense, upbeat/energetic",
+        "audio_path": "dSCcZOVYnZs.npy"
+    },
+    {
+        "audio_id": 824,
+        "caption": "background-music, beautiful, bright, cute, easy, emotional, happy, intense/grand, jazz, passionate, playful, ragtime, romantic, speedy, swing, upbeat/energetic",
+        "audio_path": "dqr5HiQLzNk.npy"
+    },
+    {
+        "audio_id": 825,
+        "caption": "background-music, blues, bright, cute, difficult, emotional, jazz, laid-back, passionate, playful, romantic, speedy, swing",
+        "audio_path": "imgToqsfp9M.npy"
+    },
+    {
+        "audio_id": 826,
+        "caption": "background-music, beautiful, bright, cute, emotional, happy, intense/grand, jazz, passionate, playful, ragtime, relaxing/calm, romantic, speedy, swing, tense, upbeat/energetic",
+        "audio_path": "kHgvuBwtmeg.npy"
+    },
+    {
+        "audio_id": 827,
+        "caption": "background-music, beautiful, blues, bright, difficult, emotional, intense/grand, jazz, laid-back, relaxing/calm, romantic, soft, swing",
+        "audio_path": "rk0tM87ptMM.npy"
+    },
+    {
+        "audio_id": 828,
+        "caption": "background-music, ballad, beautiful, bright, classical, dreamy, emotional, happy, intense/grand, jazz, laid-back, passionate, pop-piano cover, relaxing/calm, romantic, soft, swing",
+        "audio_path": "s-UjwvJ0eeA.npy"
+    },
+    {
+        "audio_id": 829,
+        "caption": "ballad, beautiful, bright, easy, emotional, laid-back, pop-piano cover, relaxing/calm, romantic, sad, soft",
+        "audio_path": "uDGLQljGFR8.npy"
+    },
+    {
+        "audio_id": 830,
+        "caption": "background-music, bright, cute, happy, jazz, playful, ragtime, speedy",
+        "audio_path": "uvoKYIGQp1M.npy"
+    },
+    {
+        "audio_id": 831,
+        "caption": "background-music, beautiful, bright, dreamy, easy, emotional, happy, laid-back, mysterious, new-age, relaxing/calm, romantic, soft",
+        "audio_path": "wgJybjeFAAo_part_19.npy"
+    }
+]

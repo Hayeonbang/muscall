@@ -2,10 +2,12 @@ import os
 import numpy as np
 from pathlib import Path
 from typing import Tuple, Optional, Union, Callable
-
+import torch
 import torchaudio
 from torch import Tensor
 from torch.utils.data import Dataset
+
+import json
 
 
 class TaggingDataset(Dataset):
@@ -26,7 +28,7 @@ class TaggingDataset(Dataset):
     ) -> None:
 
         super().__init__()
-
+    
         self.subset = subset
 
         assert subset is None or subset in ["training", "validation", "testing"], (
@@ -127,3 +129,58 @@ class MTTDataset(TaggingDataset):
     @classmethod
     def num_classes(cls):
         return 50
+
+
+class TestDataset(Dataset):
+    """Custom dataset for loading audio and captions from JSON file."""
+    
+    def __init__(self, json_path, npy_dir, subset="testing"):
+        """
+        Args:
+            json_path (str): Path to the JSON file containing dataset information.
+            npy_dir (str): Directory where numpy files are stored.
+            subset (str, optional): Which subset of the dataset to use. Default is "testing".
+        """
+        assert subset in ["training", "validation", "testing"], "Subset must be one of 'training', 'validation', or 'testing'."
+
+        self.json_path = json_path
+        self.npy_dir = npy_dir
+        self.subset = subset
+
+        with open(json_path, 'r') as file:
+            self.data = json.load(file)
+
+    def __len__(self):
+        return len(self.data)
+
+    def __getitem__(self, idx):
+        item = self.data[idx]
+        audio_path = Path(self.npy_dir) / item['audio_path']
+        waveform = np.load(audio_path)
+
+        # 오디오를 토치 텐서로 변환
+        waveform = torch.tensor(waveform, dtype=torch.float)
+
+        # 오디오 길이를 통일하기 위한 처리
+        # 예: 오디오를 20초 길이로 자름 (16000 샘플/초)
+        length = 20 * 16000
+        if waveform.size(0) < length:
+            # 짧은 오디오는 패딩
+            padding = length - waveform.size(0)
+            waveform = torch.nn.functional.pad(waveform, (0, padding), 'constant', 0)
+        else:
+            # 긴 오디오는 중간 부분을 잘라냄
+            start = int((waveform.size(0) - length) / 2.0)
+            waveform = waveform[start : start + length]
+
+        caption = item['caption']
+        return waveform, caption
+    @staticmethod
+    def num_classes():
+        return 36  # As there are 36 tags
+
+    @staticmethod
+    def get_all_tags():
+        # Return a list of all tags in the dataset
+        # This method needs to be implemented based on how tags are stored and used in your application
+        pass

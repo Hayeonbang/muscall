@@ -29,9 +29,9 @@ class SimCLRAudio(nn.Module):
             p_polarity=self.config.ssl.p_polarity,
             p_noise=self.config.ssl.p_noise,
             p_gain=self.config.ssl.p_gain,
-            p_highpass=self.config.ssl.p_filter,
-            p_lowpass=self.config.ssl.p_filter,
-            p_reverb=self.config.ssl.p_reverb,
+            #p_highpass=self.config.ssl.p_filter,
+            #p_lowpass=self.config.ssl.p_filter,
+            #p_reverb=self.config.ssl.p_reverb,
             p_pitch_shift=self.config.ssl.p_pitch_shift,
             sample_rate=16000,
         )

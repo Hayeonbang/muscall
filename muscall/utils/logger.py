@@ -12,17 +12,16 @@ class Logger:
         self.init_training_log()
 
     def init_pretrain_logger(self):
-        if self.config.env.experiment_id is None:
+        if "experiment_id" not in self.config.env or self.config.env.experiment_id is None:
             self.experiment_id = self.get_timestamp()
-            OmegaConf.update(self.config, "env.experiment_id",
-                             self.experiment_id)
+            OmegaConf.update(self.config, "env.experiment_id", self.experiment_id)
         else:
             self.experiment_id = self.config.env.experiment_id
-        self.experiment_dir = os.path.join(self.config.env.experiments_dir,
-                                           self.experiment_id)
 
-        self.checkpoint_path = os.path.join(
-            self.experiment_dir, 'checkpoint.pth.tar')
+        self.experiment_dir = os.path.join(self.config.env.experiments_dir, 
+                                           self.experiment_id)
+        self.checkpoint_path = os.path.join(self.experiment_dir, 'checkpoint.pth.tar')
+
 
     def init_training_log(self):
         self.log_filename = os.path.join(self.experiment_dir, "train_log.tsv")
