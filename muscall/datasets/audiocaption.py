@@ -7,7 +7,7 @@ from torch.utils.data.dataset import Dataset
 
 from transformers.models.bert.tokenization_bert import BertTokenizer
 from transformers.models.clip.tokenization_clip import CLIPTokenizer
-
+from transformers.models.roberta.tokenization_roberta import RobertaTokenizer
 
 class AudioCaptionDataset(Dataset):
     def __init__(self, config, tokenizer=None, dataset_type="train"):
@@ -55,6 +55,9 @@ class AudioCaptionDataset(Dataset):
             self.tokenizer = CLIPTokenizer.from_pretrained(
                 "openai/clip-vit-base-patch32"
             )
+        elif self.config.text.tokenizer == "robertatokenizer":
+            self.tokenizer = RobertaTokenizer.from_pretrained("roberta-base")
+            
         else:
             raise ValueError(
                 "{} is not supported. Please provide a valid tokenizer.".format(
@@ -82,7 +85,7 @@ class AudioCaptionDataset(Dataset):
             else:
                 # for validation and testing sets, take a central crop
                 start_index = (audio_length - self.num_samples) // 2
-                # start_index = 0
+                # start_index = 0  
             end_index = start_index + self.num_samples
 
         # downmix to mono if # of channels = 2
@@ -125,21 +128,25 @@ class AudioCaptionDataset(Dataset):
         return input_ids
 
     def get_text_input(self, idx):
-        """Build text model input."""
-        input_ids = self.get_input_ids(idx)
+        """Build text model input.
+        주어진 인덱스(idx)에 대한 텍스트를 처리하고, BERT등 트랜스포머 기반 모델에 적합한 형태로 변환하는 역할
+        """
+        input_ids = self.get_input_ids(idx) # 주어진 인덱스에 해당하는 캡션을 가져와 토큰화한 뒤, 토큰에 해당하는 id로 변환
 
-        input_type_ids = [0] * len(input_ids)
-        attention_mask = [1] * len(input_ids)
+        input_type_ids = [0] * len(input_ids) # 토큰의 타입 ID를 생성
+        attention_mask = [1] * len(input_ids) 
+        # attention_mask는 모델이 실제 텍스트와 패딩을 구분할 수 있도록 실제 텍스트의 토큰에는 1을, 패딩된 부분에는 0을 할당함. 초기에는 모든 토큰이 실제 데이터이므로 1로 설정
         # Zero-pad up to the sequence length.
-        while len(input_ids) < self.max_seq_length:
+        while len(input_ids) < self.max_seq_length: 
+            # input_ids, input_type_ids, attention_mask의 길이를 self.max_seq_length에 맞추기 위해 필요한 만큼 0을 추가
             input_ids.append(0)
             input_type_ids.append(0)
             attention_mask.append(0)
-
+        # PyTorch 텐서로 변환
         input_ids = torch.tensor(input_ids, dtype=torch.long)
         input_type_ids = torch.tensor(input_type_ids, dtype=torch.long)
         attention_mask = torch.tensor(attention_mask, dtype=torch.long)
-
+        
         return input_ids, input_type_ids, attention_mask
 
     def __getitem__(self, idx):

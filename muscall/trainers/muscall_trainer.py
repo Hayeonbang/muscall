@@ -19,7 +19,7 @@ from muscall.utils.audio_utils import get_transform_chain
 class MusCALLTrainer(BaseTrainer):
     def __init__(self, config, logger):
         super().__init__(config, logger)
-        self.bert_config = self.config.model_config.bert
+        #self.bert_config = self.config.model_config.bert
         self.batch_size = self.config.training.dataloader.batch_size
 
         self.load()
@@ -42,12 +42,12 @@ class MusCALLTrainer(BaseTrainer):
         self.train_loader = DataLoader(
             dataset=self.train_dataset,
             **self.config.training.dataloader,
-            drop_last=True,
+            drop_last=False,
         )
         self.val_loader = DataLoader(
             dataset=self.val_dataset,
             **self.config.training.dataloader,
-            drop_last=True,
+            drop_last=False,
         )
 
         self.logger.write(
@@ -174,8 +174,18 @@ class MusCALLTrainer(BaseTrainer):
 
         for i, batch in enumerate(data_loader):
             batch = tuple(t.to(device=self.device, non_blocking=True) for t in batch)
-            audio_id, input_audio, text_input_ids, _, _, data_idx = batch
-
+            audio_id, input_audio, text_input_ids, text_type_ids, text_attention_mask, data_idx = batch
+            current_batch_size = input_audio.size(0)
+            if current_batch_size < self.batch_size:
+                # 작은 배치에 대한 처리 로직
+                # 예: 패딩을 추가하여 배치 크기를 self.batch_size에 맞춤
+                padding_size = self.batch_size - current_batch_size
+                padding = torch.zeros(padding_size, *input_audio.shape[1:]).to(input_audio.device)  # GPU로 옮김
+                input_audio = torch.cat([input_audio, padding], dim=0)    
+                text_padding = torch.zeros(padding_size, *text_input_ids.shape[1:], dtype=text_input_ids.dtype).to(text_input_ids.device)
+                text_input_ids = torch.cat([text_input_ids, text_padding], dim=0)
+                # 다른 텐서들에 대해서도 동일한 패딩 로직 적용
+                # ...
             if self.config.model_config.loss == "weighted_clip":
                 sentence_sim = self.get_sentence_similarities(data_loader, data_idx)
             else:
@@ -200,7 +210,8 @@ class MusCALLTrainer(BaseTrainer):
                     input_audio,
                     text_input_ids,
                     original_audio=original_audio,
-                    sentence_sim=sentence_sim,
+                    sentence_sim=sentence_sim
+                    #TODO: if BertModel, add text_mask=text_attention_mask, else delete
                 )
 
             if is_training:

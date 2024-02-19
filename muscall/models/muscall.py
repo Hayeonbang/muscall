@@ -3,6 +3,8 @@ import numpy as np
 import torch
 from torch import nn
 from transformers import CLIPTextModel
+from transformers import BertModel, BertTokenizer, RobertaModel
+
 
 from muscall.modules.textual_heads import TextTransformer
 from muscall.modules.audio_ssl import SimCLRAudio
@@ -66,7 +68,21 @@ class MusCALL(nn.Module):
         elif config.text.model == "CLIPTextModel":
             pretrained_model = config.text.pretrained
             self.textual_head = CLIPTextModel.from_pretrained(pretrained_model)
-
+            '''
+            #To Freeze the CLIP model
+            for param in self.textual_head.parameters():
+                param.requires_grad = False
+            '''
+        elif config.text.model == "Bert":
+            pretrained_model = config.text.pretrained
+            self.textual_head = BertModel.from_pretrained(pretrained_model)
+            # BERT 모델의 모든 매개변수를 동결합니다.
+            for param in self.textual_head.parameters():
+                param.requires_grad = False
+        elif config.text.model == "Roberta":
+            pretrained_model = config.text.pretrained
+            self.textual_head = RobertaModel.from_pretrained(pretrained_model)
+            
         self.audio_projection = nn.Linear(audio_dim, projection_dim, bias=False)
         self.text_projection = nn.Linear(text_dim, projection_dim, bias=False)
 
@@ -94,6 +110,14 @@ class MusCALL(nn.Module):
             ]
         elif isinstance(self.textual_head, CLIPTextModel):
             outputs = self.textual_head(text, text_mask)
+            pooled_outout = outputs.pooler_output
+        
+        elif isinstance(self.textual_head, BertModel):
+            outputs = self.textual_head(text, attention_mask=text_mask)
+            pooled_outout = outputs.pooler_output
+            
+        elif isinstance(self.textual_head, RobertaModel):
+            outputs = self.textual_head(text, attention_mask=text_mask)
             pooled_outout = outputs.pooler_output
 
         text_features = self.text_projection(pooled_outout)

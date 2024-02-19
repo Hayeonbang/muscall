@@ -1,11 +1,19 @@
 import os
-
+import json
 import torch
 from torch.utils.data import DataLoader, Subset
 
 from muscall.models.muscall import MusCALL
 from muscall.datasets.audiocaption import AudioCaptionDataset
+from sklearn.metrics import roc_auc_score, average_precision_score
 
+TAGNAMES = ['Beautiful', 'Emotional', 'Romantic', 'Background-music', 'Relaxing/Calm',
+        'Soft', 'Bright', 'Happy', 'Upbeat/Energetic', 'Cute', 'Playful', 'Dreamy',
+        'Mysterious', 'Sad', 'Dark', 'Tense', 'Scary', 'Epic', 'Intense/Grand',
+        'Passionate', 'Powerful', 'Difficult', 'Easy', 'Speedy', 'Laid-back', 'Jazz',
+        'New-age', 'Pop-Piano Cover', 'Classical', 'Swing', 'Funk', 'Latin', 'Blues', 'Ragtime', 'Ballad', 'Pop-rock']
+
+tag_list = [tag.lower() for tag in TAGNAMES]
 
 @torch.no_grad()
 def get_muscall_features(model, data_loader, device):
@@ -92,6 +100,20 @@ def run_retrieval(model, data_loader, device):
     return retrieval_metrics
 
 
+
+def compute_random_metrics(num_queries, num_items):
+    retrieved_indices_random = torch.randint(0, num_items, (num_queries, num_items))
+
+    # GT 인덱스 계산 방식은 기존과 동일
+    gt_indices = torch.zeros((num_queries, num_items, 1))
+    for i in range(num_queries):
+        gt_indices[i] = torch.full((num_queries, 1), i)
+    gt_indices = gt_indices.squeeze(-1)
+
+    # 랜덤 결과에 대한 메트릭 계산
+    return compute_metrics(retrieved_indices_random, gt_indices)
+
+
 class Retrieval:
     def __init__(self, muscall_config, test_set_size=0):
         super().__init__()
@@ -113,7 +135,7 @@ class Retrieval:
         dataset = AudioCaptionDataset(self.muscall_config.dataset_config, dataset_type="test")
         indices = torch.randperm(len(dataset))[: self.test_set_size]
         random_dataset = Subset(dataset, indices)
-        self.batch_size = 256
+        self.batch_size = 1
         self.data_loader = DataLoader(
             dataset=random_dataset,
             batch_size=self.batch_size,
@@ -127,6 +149,34 @@ class Retrieval:
         self.model.to(self.device)
         self.model.eval()
 
+
+    def print_top_results(self, retrieved_indices):
+        # JSON 파일에서 테스트 데이터셋 로드
+        with open('/home/habang8/muscall/data/datasets/audiocaption/tag/dataset_test.json', 'r') as file:
+            test_dataset = json.load(file)
+        results = {}
+        for query_idx in range(min(len(test_dataset), self.test_set_size)):
+            # 기준 텍스트 쿼리 데이터 가져오기
+            query_caption = test_dataset[query_idx]['caption']
+            #print(f"\n기준 텍스트 쿼리: {query_caption}")
+            results[query_caption] = {}
+            # 상위 5개 검색 결과
+            top_5_indices = retrieved_indices[query_idx][:5].tolist()
+            
+            #print("Top 5 샘플의 텍스트 쿼리:")
+            for rank, idx in enumerate(top_5_indices, start=1):
+                top_caption = test_dataset[idx]['caption']
+                #print(f"  {rank}: {top_caption}")
+                results[query_caption][rank] = top_caption
+                
+        return results
+     
+    def tensor_to_list(self, tensor):
+        if isinstance(tensor, torch.Tensor):
+            return tensor.tolist()  # Tensor를 리스트로 변환
+        else:
+            return tensor
+                
     def evaluate(self):
         audio_features, text_features = get_muscall_features(
             self.model, self.data_loader, self.device
@@ -135,6 +185,28 @@ class Retrieval:
 
         retrieved_indices, gt_indices = get_ranking(score_matrix, self.device)
         retrieval_metrics = compute_metrics(retrieved_indices, gt_indices)
-        print(retrieval_metrics)
+        print('Retrieval_metrics: ', retrieval_metrics)
+        # 랜덤 메트릭 계산 및 출력
+        random_metrics = compute_random_metrics(self.test_set_size, len(self.data_loader.dataset))
+        #print("Random Retrieval Metrics:", random_metrics)
+        self.print_top_results(retrieved_indices)
+        retrieval_metrics_list = {k: self.tensor_to_list(v) for k, v in retrieval_metrics.items()}
+        random_metrics_list = {k: self.tensor_to_list(v) for k, v in random_metrics.items()}
 
-        return retrieval_metrics
+        # 결과를 JSON 파일로 저장
+        results = {
+            'retrieval_metrics': retrieval_metrics_list,
+            'random_metrics': random_metrics_list,
+            'top_results': self.print_top_results(retrieved_indices)
+            
+        }
+
+        # 결과를 JSON 파일로 저장
+        with open(f'./save/experiments/{self.muscall_config.env.experiment_id}/retrieval_results.json', 'w') as f:
+            json.dump(results, f, indent=4)
+
+        self.print_top_results(retrieved_indices)
+
+        return retrieval_metrics                
+
+ 
